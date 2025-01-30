@@ -10,17 +10,17 @@ With roughly 15 years of WordPress development experience, I've worked extensive
 
 ## Proofs of Skills
 
-1. [JS in WordPress Context](frontend-wp/)  
+1. [JS in WordPress Context](frontend-wp/README.md)  
    JavaScript development in WordPress, excluding Site and Block Editor
 
-2. [React Development](react-ui/)  
+2. [React Development](react-ui/README.md)  
    Generic React.js development outside of WordPress
 
-3. [WordPress Core](wp-core/)  
+3. [WordPress Core](wp-core/README.md)  
    Core development and debugging tools
 
-4. [PHP Architecture](php-arch/)  
+4. [PHP Architecture](php-arch/README.md)  
    Object-oriented programming and modern PHP practices
 
-5. [Automation](automation/)  
+5. [Automation](automation/README.md)  
    CI/CD workflows and deployment automation
