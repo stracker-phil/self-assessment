@@ -10,17 +10,27 @@ With roughly 15 years of WordPress development experience, I've worked extensive
 
 ## Proofs of Skills
 
-1. [JS in WordPress Context](frontend-wp/README.md)  
-   JavaScript development in WordPress, excluding Site and Block Editor
+1. [JS in WordPress Context](frontend-wp/README.md)
 
-2. [React Development](react-ui/README.md)  
-   Generic React.js development outside of WordPress
+   - Topic: `JS in the context of WordPress` (but excluding Site and Block Editor)
+   - React-based frontend that integrates with WordPress REST API and custom theming
 
-3. [WordPress Core](wp-core/README.md)  
-   Core development and debugging tools
+2. [React Development](react-ui/README.md)
 
-4. [PHP Architecture](php-arch/README.md)  
-   Object-oriented programming and modern PHP practices
+   - Topic: `Generic React.js development` ~~outside of WordPress~~
+   - React UI development for WooCommerce PayPal, focusing on architecture and reusable components.
 
-5. [Automation](automation/README.md)  
-   CI/CD workflows and deployment automation
+3. [WordPress Core](wp-core/README.md)
+
+   - Topic: `WordPress Core internals`
+   - GDPR-compliant asset caching plugin showcasing WordPress hooks, cron jobs, and cache management.
+
+4. [PHP Architecture](php-arch/README.md)
+
+   - Topic: `PHP - Generic`, ~~outside the context of WordPress~~
+   - WordPress plugin demonstrating modern PHP architecture, dependency injection, and object-oriented design patterns.
+
+5. [Automation](automation/README.md)
+
+   - Topic: `Automation, CI/CD`
+   - WordPress plugin deployment pipeline (testing, packaging, and multi-channel distribution)
