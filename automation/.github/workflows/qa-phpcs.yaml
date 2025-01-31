@@ -1,0 +1,63 @@
+name: PHP CS Check
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  phpcs-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      # The FULL_ACCESS_TOKEN needs read-and-write access to
+      #   (a) all shared modules, and
+      #   (b) the current repo
+      # Edit the token: https://github.com/settings/personal-access-tokens/2282772
+      # Add token to org: https://github.com/organizations/divimode/settings/secrets/actions
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.FULL_ACCESS_TOKEN }}
+          submodules: true  # Check out submodules
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4  # CONFIG VALUE
+
+      - name: Get Composer Cache Directory
+        run: echo "composer_dir=$(composer config cache-files-dir)" >> $GITHUB_ENV
+
+      - name: Cache root dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.composer_dir }}
+          key: ${{ runner.os }}-composer-root-${{ hashFiles('composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-root-
+
+      - name: Cache PHPCS dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.composer_dir }}
+          key: ${{ runner.os }}-composer-phpcs-${{ hashFiles('tests/~phpcs/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-phpcs-
+
+      - name: Download my PHPCS ruleset from divimode repo
+        run: git clone https://github.com/divimode/marketplace-phpcs/ "tests/~phpcs"
+
+      - name: Install PHPCS dependencies
+        run: |
+          cd tests/~phpcs
+          composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+          composer install --no-interaction
+
+      - name: Run PHPCS
+        run: |
+          tests/~phpcs/vendor/bin/phpcs \
+            -p \
+            -s \
+            --extensions=php \
+            --ignore=/bin/*,/wiki/*,/node_modules/*,vendor/*,/tests/*,/build/* \
+            --standard="tests/~phpcs/ruleset.xml" \
+            "."

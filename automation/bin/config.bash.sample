@@ -1,0 +1,13 @@
+#
+# ------------------ Sample project configuration ------------------
+#
+# Do not change this file! It contains static project details
+# that should be identical for every developer and every release.
+# To adjust local settings, create/edit the file "config.local.bash"
+#
+
+export plugin_name=sample-plugin
+export prefix=sp
+export package=SamplePlugin
+export text_domain=sample_plugin
+export plugin_type=pro   # or free

@@ -1,0 +1,65 @@
+name: Create Plugin Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # The FULL_ACCESS_TOKEN needs read-and-write access to
+      #   (a) all shared modules, and
+      #   (b) the current repo
+      # Edit the token: https://github.com/settings/personal-access-tokens/2282772
+      # Add token to org: https://github.com/organizations/divimode/settings/secrets/actions
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.FULL_ACCESS_TOKEN }}
+          submodules: true  # Check out submodules
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14  # CONFIG VALUE
+
+      - name: Set Release Name
+        run: |
+          echo "RELEASE_NAME=build-$(date +'%y%m%d')-${{ github.run_number }}" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Build plugins
+        run: |
+          chmod +x bin/action/build.sh
+          bin/action/build.sh
+
+      - name: Find Divimode Plugin Path
+        run: |
+          echo "plugin_path_divimode=$(find build -name '*-divimode-*')" >> $GITHUB_ENV
+
+      - name: Find Divimode Plugin Name
+        run: |
+          echo "plugin_name_divimode=$(basename "${{ env.plugin_path_divimode }}")" >> $GITHUB_ENV
+
+      - name: Find ET Market Plugin Path
+        run: |
+          echo "plugin_path_etmarket=$(find build -name '*-etmarket-*')" >> $GITHUB_ENV
+
+      - name: Find ET Market Plugin Name
+        run: |
+          echo "plugin_name_etmarket=$(basename "${{ env.plugin_path_etmarket }}")" >> $GITHUB_ENV
+
+      - name: Create Release
+        run: |
+          gh release create "$RELEASE_NAME" \
+            -t "Release $RELEASE_NAME" \
+            "${{ env.plugin_path_divimode }}" \
+            "${{ env.plugin_path_etmarket }}"
+        env:
+          GH_TOKEN: ${{ github.token }}
