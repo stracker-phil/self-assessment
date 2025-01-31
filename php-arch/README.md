@@ -1,6 +1,7 @@
 # General PHP Architecture
 
-> Back-end topic, proof for "**PHP - Generic**, outside the context of WordPress"
+| Back-End | **PHP - Generic**, outside the context of WordPress |
+|----------|-----------------------------------------------------|
 
 ## Overview
 

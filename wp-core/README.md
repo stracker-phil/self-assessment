@@ -1,6 +1,7 @@
 # WordPress Core Development
 
-> Back-end topic, proof for "**WordPress Core internals**"
+| Back-End | **WordPress Core internals** |
+|----------|------------------------------|
 
 ## Overview
 

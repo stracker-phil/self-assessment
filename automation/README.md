@@ -1,6 +1,7 @@
 # GitHub Automation
 
-> General topic, proof for "**Automation, CI/CD**"
+| General topic | **Automation, CI/CD** |
+|---------------|-----------------------|
 
 ## Overview
 

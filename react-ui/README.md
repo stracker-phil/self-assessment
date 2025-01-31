@@ -1,6 +1,7 @@
 # React Development
 
-> Front-end topic, proof for "**React.js - Generic**, outside of the context of WordPress"
+| Front-End | **React.js - Generic**, outside of the context of WordPress |
+|-----------|-------------------------------------------------------------|
 
 ## Overview
 

@@ -1,6 +1,7 @@
 # JS in WordPress
 
-> Front-end topic, proof for "**JS in the context of WordPress** (excluding Site and Block Editor)"
+| Front-End | **JS in the context of WordPress** (excluding Site and Block Editor) |
+|-----------|----------------------------------------------------------------------|
 
 ## Overview
 
