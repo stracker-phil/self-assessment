@@ -1,7 +1,7 @@
 # GitHub Automation
 
-| General topic | **Automation, CI/CD** |
-|---------------|-----------------------|
+| General topic | Automation, CI/CD |
+|---------------|-------------------|
 
 ## Overview
 

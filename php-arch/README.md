@@ -1,6 +1,6 @@
 # General PHP Architecture
 
-| Back-End | **PHP - Generic**, outside the context of WordPress |
+| Back-End | PHP - Generic, ~~outside the context of WordPress~~ |
 |----------|-----------------------------------------------------|
 
 ## Overview

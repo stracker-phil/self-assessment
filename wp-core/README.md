@@ -1,7 +1,7 @@
 # WordPress Core Development
 
-| Back-End | **WordPress Core internals** |
-|----------|------------------------------|
+| Back-End | WordPress Core internals |
+|----------|--------------------------|
 
 ## Overview
 

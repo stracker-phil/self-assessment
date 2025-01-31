@@ -1,7 +1,7 @@
 # JS in WordPress
 
-| Front-End | **JS in the context of WordPress** (excluding Site and Block Editor) |
-|-----------|----------------------------------------------------------------------|
+| Front-End | JS in the context of WordPress (excluding Site and Block Editor) |
+|-----------|------------------------------------------------------------------|
 
 ## Overview
 
