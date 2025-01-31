@@ -9,10 +9,38 @@ The featured React project showcases component architecture, state management, a
 
 ## Evidence
 
-1. [sample link 1](#)  
-   Key highlights of this link
-2. [sample link 2](#)  
-   What's relevant in this link
+1. [The Settings module](https://github.com/woocommerce/woocommerce-paypal-payments/tree/trunk/modules/ppcp-settings)
+   - **More specific links are below**
+   - This is the full settings module - containing PHP and JS/SCSS code
+   - My commits can be easily spotted, as I'm the only person using gitmojis
+
+**Redux Architecture**
+
+2. [Redux store template](https://github.com/woocommerce/woocommerce-paypal-payments/tree/trunk/modules/ppcp-settings/resources/js/data/_example)  
+   - A sample implementation of a Redux store
+   - The initial Redux store setup was my responsibility
+   - Also note that the `onboarding` store is the first to use [thunks](https://developer.wordpress.org/block-editor/how-to-guides/thunks/) instead of controls
+
+3. [Redux debug module](https://github.com/woocommerce/woocommerce-paypal-payments/blob/trunk/modules/ppcp-settings/resources/js/data/debug.js)
+   - A small helper for Devs, QA, and other team members to test various app stages
+   - It also showcases how to access Redux via the global `wp.data` object
+
+**React and Component Design**
+
+4. [Custom React hooks](https://github.com/woocommerce/woocommerce-paypal-payments/blob/trunk/modules/ppcp-settings/resources/js/hooks)
+   - We try to use hooks to decouple behavior from UI componenty
+   - From [simple navigation](https://github.com/woocommerce/woocommerce-paypal-payments/blob/trunk/modules/ppcp-settings/resources/js/hooks/useNavigation.js) to [more complex OAuth logic](https://github.com/woocommerce/woocommerce-paypal-payments/blob/trunk/modules/ppcp-settings/resources/js/hooks/useHandleConnections.js)
+
+5. [Screen Management](https://github.com/woocommerce/woocommerce-paypal-payments/blob/trunk/modules/ppcp-settings/resources/js/Components/Screens/Onboarding/index.js)
+   - Note how the content of the screen comes from [`getSteps()`](https://github.com/woocommerce/woocommerce-paypal-payments/blob/6339207bcde5602dfa7f84f8364a3ebc657ad99b/modules/ppcp-settings/resources/js/Components/Screens/Onboarding/Steps/index.js#L53-L69)
+   - File organization (onboarding): Screens are separated from the (reusable) Components
+
+**Implementation Sample**
+
+6. [Styling Page](https://github.com/woocommerce/woocommerce-paypal-payments/tree/trunk/modules/ppcp-settings/resources/js/Components/Screens/Settings/Components/Styling)
+   - Fully refactored this module, split code into Layout/Content
+   - Integrated the UI with the Redux store
+   - Generally, I aim to create generic, reusable components ([like this one](https://github.com/woocommerce/woocommerce-paypal-payments/blob/trunk/modules/ppcp-settings/resources/js/Components/ReusableComponents/Icons/GenericIcon.js))
 
 ## Context
 
