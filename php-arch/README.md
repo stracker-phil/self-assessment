@@ -5,19 +5,54 @@
 
 ## Overview
 
-This proof presents a WordPress plugin built with modern PHP practices. The implementation follows a Symfony-inspired architecture, using object-oriented design principles, dependency management, and clean code practices.
+This proof presents a WordPress plugin built with modern PHP practices. While developed within WordPress, the implementation demonstrates generic PHP skills through its Symfony-inspired architecture, object-oriented design principles, and Modularity for dependency injection.
 
 ## Evidence
 
-1. [sample link 1](#)  
-   Key highlights of this link
-2. [sample link 2](#)  
-   What's relevant in this link
+**Modern PHP Features**
+
+1. [Data Transfer Objects](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Dto/UserDto.php)
+   - Constructor Property Promotion
+   - Named Arguments implementation
+   - Type-safe data handling
+
+2. [Related Data Transformers](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Service/Transformer/UserJsonPlaceholderTransformer.php)
+   - Combines data parsing logic in an isolated module
+   - Parses arrays into DTOs
+   - Isolates knowledge of internal data structures from REST endpoints
+
+**Architecture Patterns**
+
+3. [Simple Modularity Wrapper](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Application.php)
+   - Provides means to [easily configure the plugin](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/dfe351b8a26bd1b6095a44f740d267849f2dfbc0/backend-user-list.php#L64-L92)
+
+4. [DI Service-Providers](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Provider/FrontendProvider.php)
+   - PSR-11 compatible containers, using Modularity
+   - Service provider implementation
+
+5. [Repository Pattern](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Repository/UserRepository.php)
+   - Data access abstraction
+   - Caching integration
+   - Error handling implementation
+
+**Advanced Patterns**
+
+6. [SettingResolver Pattern](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Service/Setting/SettingResolver.php)
+   - Configuration proxy implementation
+   - Allows filtering values _after_ plugin initialization
+   - Unit test compatibility
+
+7. [Action Handler Pattern](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/main/src/Action/TerminateAction.php)
+   - Sample [usage of the TerminateAction](https://github.com/stracker-phil/inpsyde-assessment-user-list/blob/dfe351b8a26bd1b6095a44f740d267849f2dfbc0/src/Controller/ListPageController.php#L103-L104)
+   - Command pattern implementation
+   - Testable action execution
+   - WordPress hook integration
 
 ## Context
 
-- The plugin serves as an example of how I write code from scratch; it's specifically an _assessment repo_ and not a real-world project.
-- I also choose this same project as the [JS in WordPress](../frontend-wp/README.md) proof, as I believe showcasing a single full-stack sample gives a better impression of my skills.
+- This assessment plugin was specifically created to demonstrate clean architecture principles and modern PHP practices.
+- The project includes a React-based frontend, documented in the [JS in WordPress](../frontend-wp/README.md) section, showcasing how the backend architecture supports frontend integration.
+- Though built as a WordPress plugin, the PHP architecture deliberately follows generic best practices that would apply in any modern PHP project.
 
 ---
 
